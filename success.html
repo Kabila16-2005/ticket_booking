@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Successful</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>✅ Ticket Successfully Booked!</h2>
+    <p>Thank you {{ name }}! Your {{ ticket }} ticket has been saved successfully.</p>
+    <a href="/options"><button>Back to Home</button></a>
+  </div>
+</body>
+</html>

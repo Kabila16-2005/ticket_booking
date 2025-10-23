@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ ticket_type.title() }} Ticket Booking</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Book {{ ticket_type.title() }} Ticket</h2>
+
+    <form action="/submit" method="post" onsubmit="return validateBooking()">
+      <input type="hidden" name="ticket_type" value="{{ ticket_type }}">
+      <input type="text" name="name" placeholder="Full Name" required><br>
+      <input type="date" name="date" required><br>
+      <select name="gender">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select><br>
+      <input type="number" name="seats" placeholder="Number of Seats" required><br>
+      <select name="seat_type">
+        <option>Upper</option>
+        <option>Middle</option>
+        <option>Lower</option>
+      </select><br>
+      <input type="text" name="from_place" placeholder="From Place" required><br>
+      <input type="text" name="to_place" placeholder="To Place" required><br>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
